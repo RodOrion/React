@@ -1,0 +1,47 @@
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 2rem;
+}
+header .wrapper {
+  justify-content: space-between;
+  align-items: center;
+}
+header figure {
+  background-color: #fff;
+  margin: 0;
+}
+.logo {
+  max-height: 100px;
+}
+header span.user::first-letter {
+  text-transform: uppercase;
+}
+main > .wrapper {
+  flex-direction: column;
+}
+main section {
+  margin: 4rem 0;
+}
+main section header {
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 2px #333;
+  padding: 0 2rem;
+}
+main section .operations {
+  margin: 0 2rem;
+}
+main section .operations > div {
+  background-color: #eee;
+  justify-content: space-between;
+  padding: 1rem;
+}
+main section .operations > div:nth-child(odd) {
+  background-color: #fff;
+}
