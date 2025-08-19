@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Full Time Sales Associate",
+    "location": "Sydney Boutique",
+    "contrat": "CDI - Australie - Sydney",
+    "borderColor": "red"
+  },
+  {
+    "title": "Agent de Sécurité",
+    "location": "Pantin",
+    "contrat": "CDI - France - Pantin",
+    "borderColor": "green"
+  },
+  {
+    "title": "Responsable d'Atelier (H/F)",
+    "location": "",
+    "contrat": "CDD - France - Paris",
+    "borderColor": "yellow"
+  },
+  {
+    "title": "Chef de Projets",
+    "location": "",
+    "contrat": "CDD - France - Paris",
+    "borderColor": "blue"
+  },
+  {
+    "title": "Développeur React.js",
+    "location": "",
+    "contrat": "CDI - France - Paris",
+    "borderColor": "pink"
+  },
+  {
+    "title": "Sales Associate",
+    "location": "Stockholm",
+    "contrat": "CDI - Suède - Stockholm",
+    "borderColor": "red"
+  },
+  {
+    "title": "Vendeur/se",
+    "location": "Crans Montana",
+    "contrat": "CDI - Suisse - Crans-Montana",
+    "borderColor": "green"
+  },
+  {
+    "title": "CRM & Data Quality Analyst",
+    "location": "",
+    "contrat": "CDI - USA - New York",
+    "borderColor": "yellow"
+  },
+  {
+    "title": "Infirmier (H/F)",
+    "location": "",
+    "contrat": "CDI - France - Pantin",
+    "borderColor": "blue"
+  }
+]
