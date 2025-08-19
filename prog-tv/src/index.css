@@ -1,0 +1,28 @@
+* {
+box-sizing: border-box
+}
+
+html {font-size: 62.5%;}
+body {
+ line-height: 1;
+ font-size: 1.6rem;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  display: 'block';
+}
+
+img { max-width:100%; }
+
+.flexContainer { 
+ display: flex;
+ flex-wrap:wrap
+}
