@@ -1,11 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #e5e5e5;
 }
+/** CLASSES **/
 .wrapper {
   max-width: 1024px;
   margin: 0 auto;
 }
+button.btn {
+  cursor: pointer;
+  align-self: flex-end;
+  margin: 2rem;
+  padding: 2rem 4rem;
+  background-color: #fbfbfb;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 3px 4px 6px 0px #c1c0c0;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+button.btn:hover {
+  transform: scale(0.95);
+  box-shadow: 3px 4px 2px 0px #a8a8a8;
+  transition: 0.5s ease-out;
+}
+/*** HEADER ***/
 header {
   background-color: #222;
   color: #fff;
@@ -37,31 +58,33 @@ header .flexContainer:has(.avatar) {
   align-items: center;
   gap: 1.5rem;
 }
+/*** main ***/
 main > .wrapper {
   flex-direction: column;
 }
-main section {
+main section.blocAccount {
   margin: 4rem 0;
+  flex-direction: column;
 }
-main section header {
+main section.blocAccount header {
   position: relative;
   justify-content: space-between;
   align-items: center;
   box-shadow: 1px 1px 2px #333;
   padding: 0 2rem;
 }
-main section header .balance {
-    font-weight: 600;
-    font-size: 2rem;
+main section.blocAccount header .balance {
+  font-weight: 600;
+  font-size: 2rem;
 }
-main section .operations {
+main section.blocAccount .operations {
   margin: 0 2rem;
 }
-main section .operations > div {
+main section.blocAccount .operations > div {
   background-color: #eee;
   justify-content: space-between;
   padding: 1rem;
 }
-main section .operations > div:nth-child(odd) {
+main section.blocAccount .operations > div:nth-child(odd) {
   background-color: #fff;
 }

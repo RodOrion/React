@@ -1,11 +1,13 @@
-const Account = ({compte}) => {
-    console.log(compte);
-    const operations = compte.operations
+import Button from "./Button";
+
+const Account = ({account}) => {
+    console.log(account);
+    const operations = account.operations
     return (
-        <section>
-            <header className="flexContainer" style={{backgroundColor:compte.color}}>
-                <h2>{compte.name}</h2>
-                <div className="balance">{compte.balance} €</div>
+        <section className="blocAccount flexContainer">
+            <header className="flexContainer" style={{backgroundColor:account.color}}>
+                <h2>{account.name}</h2>
+                <div className="balance">{account.balance} €</div>
             </header>
             <div className="operations">
                 {
@@ -20,6 +22,7 @@ const Account = ({compte}) => {
                     })
                 }
             </div>
+            <Button children="See more" />
         </section>
     )
 }

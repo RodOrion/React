@@ -13,7 +13,7 @@ function App() {
         <div className="wrapper flexContainer">
           {
           compte.map( (e, index) => {
-            return <Account key={index} compte={e} />
+            return <Account key={index} account={e} />
           })
           }
         </div>
