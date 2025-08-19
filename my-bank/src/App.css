@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+  font-family: "Poppins", sans-serif;
+}
 .wrapper {
   max-width: 1024px;
   margin: 0 auto;
@@ -21,6 +25,18 @@ header figure {
 header span.user::first-letter {
   text-transform: uppercase;
 }
+header span.user {
+  font-size: 2.4rem;
+}
+header .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+header .flexContainer:has(.avatar) {
+  align-items: center;
+  gap: 1.5rem;
+}
 main > .wrapper {
   flex-direction: column;
 }
@@ -33,6 +49,10 @@ main section header {
   align-items: center;
   box-shadow: 1px 1px 2px #333;
   padding: 0 2rem;
+}
+main section header .balance {
+    font-weight: 600;
+    font-size: 2rem;
 }
 main section .operations {
   margin: 0 2rem;
