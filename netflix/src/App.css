@@ -17,9 +17,12 @@ section {
   margin-bottom: 6rem;
 }
 .caroussel {
-  overflow-y: hidden;
+  overflow-y: scroll;
   scrollbar-width: none;
 }
+/* .caroussel::-webkit-scrollbar {
+  display: none;
+} */
 .caroussel .flexContainer {
   flex-wrap: nowrap;
 }
