@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <header className="flexContainer">
+      <header className={`flexContainer ${switch1 && switch2 && switch3 && "active"}`}>
         <img src={rocket} alt="rocket" />
         <span>Ready To GO</span>
       </header>

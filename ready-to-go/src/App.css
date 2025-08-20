@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  overflow: hidden;
 }
 header.flexContainer {
     align-items: center;
@@ -29,6 +30,11 @@ section.flexContainer {
 }
 header.flexContainer img {
     max-height: 50px;
+    transition: 1s ease-out;
+}
+header.flexContainer.active img {
+  transform: translateX(calc(100vw - ((100vw - 1280px) / 2)));
+  transition: 2s ease-in;
 }
 button.on ,button.off {
     background-color: #e5e5e5;
