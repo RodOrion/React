@@ -9,7 +9,7 @@ function App() {
     <main>
     <img src={logo} alt="logo netflix" className='logo' />
     { movies.map( (el, index) => {
-      return <Section key={index} category={el.category} images={el.images} />
+      return <Section key={`${el.category} ${index}`} category={el.category} images={el.images} />
     }) }
     </main>
   )

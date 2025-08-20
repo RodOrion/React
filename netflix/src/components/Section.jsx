@@ -6,7 +6,7 @@ const Section = ({category, images}) => {
             <div className="caroussel">
                 <div className="flexContainer">       
                     {images.map( (e, index) => {
-                        return <img key={index} src={e} alt="photo movie" />
+                        return <img key={index + e} src={e} alt="photo movie" />
                     })}
                 </div>
             </div>
