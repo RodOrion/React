@@ -1,0 +1,41 @@
+body {
+  background-color: #111;
+  font-size: 2rem;
+}
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  min-height: 100vh;
+  text-align: center;
+}
+span {
+  padding: 2rem 2.5rem;
+  background-color: blueviolet;
+  margin: 0 2rem;
+  flex: 1;
+  border-radius: 5px;
+}
+button {
+  background-color: #222;
+  border: none;
+  padding: 2rem 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  border-radius: 10px;
+  font-size: 3rem;
+}
+button.disabled {
+  cursor: auto;
+  background-color: #ccc;
+}
+.reset {
+  cursor: pointer;
+  background-color: blueviolet;
+  margin-top: 2rem;
+  padding: 2rem 2.5rem;
+  flex: 1 1 100%;
+  border-radius: 10px;
+}
