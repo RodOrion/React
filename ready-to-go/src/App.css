@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+header.flexContainer {
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 8rem;
+    align-self: flex-start;
+    font-size: 3rem;
+}
+section.flexContainer {
+  gap: 8rem;
+    align-items: center;
+    width: 480px;
+    justify-content: space-between;
+    margin: auto;
+    position: relative;
+}
+header.flexContainer img {
+    max-height: 50px;
+}
+button.on ,button.off {
+    background-color: #e5e5e5;
+    border: 1px solid blue;
+    padding: 2rem;
+    transition:  0.5s ease;
+}
+button.active {
+  background-color: blue;
+  color:#fff
+}
+.containerBtns > .flexContainer {
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.result {
+  background-color: red;
+  transition:  0.5s ease;
+  padding: 2rem 4rem;
+  color: #fff;
+  position: absolute;
+  right: 0;
+}
+.result.active {
+  background-color: green;
+}
+
