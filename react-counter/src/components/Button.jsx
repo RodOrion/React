@@ -1,7 +1,8 @@
-const Button = ({ symbol, counter, setCounter, classname, disabled }) => {
+const Button = ({ symbol, setCounter, classname, disabled }) => {
 
   const handleClick = (symbol) => {
-    symbol === "+" ? setCounter(counter + 1) : setCounter(counter - 1);
+    //symbol === "+" ? setCounter(counter + 1) : setCounter(counter - 1);
+    symbol === "+" ? setCounter((prev) => prev + 1) : setCounter((prev) => prev - 1);
   };
 
   return (

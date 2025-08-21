@@ -7,8 +7,20 @@ body {
   align-items: center;
   flex-direction: column;
   color: #fff;
-  min-height: 100vh;
+  min-height: calc(100vh - 135px);
   text-align: center;
+}
+header {
+  color: #fff;
+  gap: 2rem;
+  padding: 1rem 4rem;
+  margin: 0 4rem;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+header svg {
+  fill: blueviolet;
+  stroke: #fff;
 }
 span {
   padding: 2rem 2.5rem;

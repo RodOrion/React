@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button";
+import { LuCalculator } from "react-icons/lu";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,11 +12,15 @@ function App() {
 
   return (
     <>
+      <header className="flexContainer">
+        <LuCalculator size="8rem" color="blueviolet" />
+        <h1>React counter</h1>
+      </header>
       <div className="wrapper flexContainer">
         <div className="flexContainer">
           <Button
             symbol="-"
-            counter={count}
+            // counter={count}
             setCounter= {setCount}
             classname={count === 0 ? "disabled" : ""}
             disabled={count === 0}
@@ -23,7 +28,7 @@ function App() {
           <span>{count}</span>
           <Button
             symbol="+"
-            counter={count}
+            // counter={count}
             setCounter={setCount}
             classname={count === 10 ? "disabled" : ""}
             disabled={count === 10}
