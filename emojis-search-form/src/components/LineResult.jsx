@@ -1,6 +1,6 @@
 const LineResult = ({emoji}) => {
     return (
-        <div>{emoji.symbol}</div>
+        <div className="lineResult">{emoji.symbol} : {emoji.title}</div>
     )
 }
 export default LineResult

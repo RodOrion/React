@@ -4,3 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+.lineResult {
+  background-color: cornsilk;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
