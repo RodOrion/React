@@ -8,6 +8,12 @@ function App() {
   const [switch2, setSwitch2] = useState(false);
   const [switch3, setSwitch3] = useState(false);
 
+  const reset = () => {
+    setSwitch1(false);
+    setSwitch2(false);
+    setSwitch3(false);
+  }
+
   return (
     <>
       <header className={`flexContainer ${switch1 && switch2 && switch3 && "active"}`}>
@@ -22,9 +28,9 @@ function App() {
         </div>
         <div className={switch1 && switch2 && switch3 ? "result active" : "result"}>
           <div>{switch1 && switch2 && switch3 ? "GO !" : "NO WAY !"}</div>
-        </div>
-        
+        </div>       
       </section>
+      <div className="reset" onClick={reset}>RESET</div>
     </>
   );
 }
