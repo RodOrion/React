@@ -23,6 +23,7 @@ function App() {
         <div className={switch1 && switch2 && switch3 ? "result active" : "result"}>
           <div>{switch1 && switch2 && switch3 ? "GO !" : "NO WAY !"}</div>
         </div>
+        
       </section>
     </>
   );
