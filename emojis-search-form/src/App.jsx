@@ -7,6 +7,7 @@ import LineResult from './components/LineResult'
 function App() {
   const [search, setSearch] = useState("")
   console.log("search : "+search);
+
   return (
     <>
       <Header setSearch={setSearch} search={search} />
@@ -14,14 +15,12 @@ function App() {
         emojiList.map( (emoji, index) => {
           // création tableau des keywords strings de chaque emoji
           const emojiTab = emoji.keywords.split(" ");
-
-          console.log(emojiTab.includes(search));
          
-          return () => {
+          return (
             // check si le tableau contient la recherche pour afficher le component
             emojiTab.includes(search) &&
-            <LineResult key={index} search={search} />
-          }
+            <LineResult key={index} emoji={emoji} />
+          )
         })
       }
       
