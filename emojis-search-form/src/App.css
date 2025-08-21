@@ -1,13 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
+header {
+  margin-bottom: 4rem;
+}
+header input {
+  padding: 2rem;
+  background-color: aliceblue;
+  border: 1px solid;
+  min-width: 400px;
+}
 .lineResult {
   background-color: cornsilk;
+  border: 1px solid rgb(243, 232, 188);
   padding: 2rem;
   display: flex;
   gap: 2rem;
   align-items: center;
+  margin: 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s ease;
+}
+.lineResult:hover {
+  transform: scale(1.05);
+}
+.lineResult.active::before {
+    content: "COPIED";
+    display: block;
+    width: 80px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    right: 40px;
+    top: -50px;
+    line-height: 40px;
+    font-size: 1.4rem;
+    color: #fff;
+}
+.lineResult.active::after {
+    border-top: 20px solid rgba(0,0,0,0.5);
+    display: block;
+    content: "";
+    border-left: 5px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 40px solid transparent;
+    position: absolute;
+    right: 80px;
+    top: -10px;
 }
