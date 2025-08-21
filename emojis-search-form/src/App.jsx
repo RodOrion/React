@@ -12,18 +12,18 @@ function App() {
     <>
       <Header setSearch={setSearch} search={search} />
       { 
+        search &&
         emojiList.map( (emoji, index) => {
-          // création tableau des keywords strings de chaque emoji
-          const emojiTab = emoji.keywords.split(" ");
-         
-          return (
-            // check si le tableau contient la recherche pour afficher le component
-            emojiTab.includes(search) &&
+          // création fonction regex de recherche de keywords commencant par la recherche
+          const regex = new RegExp(`^${search}`, 'i');
+          //console.log(regex);
+          return (           
+            // check si les keywords emojis commencent par la recherche grâce à la fonction test du regex
+            regex.test(emoji.keywords) &&
             <LineResult key={index} emoji={emoji} />
           )
         })
       }
-      
     </>
   )
 }
