@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import StepTwo from "./components/StepTwo";
+import Footer from "./components/Footer";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ function App() {
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [submited, setSubmited] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("")
 
   return (
     <div className="wrapper">
@@ -27,6 +29,8 @@ function App() {
             confirmPass={confirmPass}
             name={name}
             email={email}
+            errorMsg={errorMsg}
+            setErrorMsg={setErrorMsg}
           />
         )}
 
@@ -40,6 +44,7 @@ function App() {
           />
         )}
       </main>
+      <Footer />
     </div>
   );
 }

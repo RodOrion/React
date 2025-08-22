@@ -1,12 +1,17 @@
-const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, confirmPass, name, email}) => {
+import { useState } from "react";
+import { FaEye } from "react-icons/fa";
+
+const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, confirmPass, name, email, errorMsg, setErrorMsg}) => {
+  const [eyePass, setEyePass] = useState(false)
+  const [eyeConfirmPass, setEyeConfirmPass] = useState(false)
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
+  // const handleNameChange = (e) => {
+  //   setName(e.target.value);
+  // };
 
   const handlePassChange = (e) => {
     setPass(e.target.value);
@@ -16,10 +21,24 @@ const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, co
     setConfirmPass(e.target.value);
   };
 
+  const handleChange = (event, setState) => {
+    setState(event.target.value)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    { pass !== confirmPass ? alert("passwords non identiques") : setSubmited(true)}
+    if(pass !== confirmPass) {
+       setErrorMsg("passwords non identiques") 
+      //alert("no !")
+    } else {
+      setSubmited(true)
+      setErrorMsg("")
+    }
   };
+
+  const handleClickEye = (state, setState) => {
+    setState(!state)
+  }
 
   return (
     <form action="" onSubmit={handleSubmit} className="flexContainer">
@@ -30,7 +49,9 @@ const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, co
         id="name"
         placeholder="name"
         value={name}
-        onChange={handleNameChange}
+        onChange={(event) => {
+          handleChange(event, setName)
+        }}
       />
       <label htmlFor="email">Email</label>
       <input
@@ -41,24 +62,41 @@ const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, co
         value={email}
         onChange={handleEmailChange}
       />
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="password"
-        value={pass}
-        onChange={handlePassChange}
-      />
+      <div className="relative">
+        <label htmlFor="password">Password</label>
+        <input
+          type={eyePass ? "text" :"password"}
+          name="password"
+          id="password"
+          placeholder="password"
+          value={pass}
+          onChange={handlePassChange}
+          className={errorMsg && "red"}
+        />
+        <FaEye onClick={ () => {
+          handleClickEye(eyePass, setEyePass)
+        }} 
+        />
+      </div>
+      <div className="relative">
       <label htmlFor="confirm-password">Confirm password</label>
       <input
-        type="password"
+        type={eyeConfirmPass ? "text" :"password"}
         name="confirm-password"
         id="confirm-password"
         placeholder="confirm your password"
         value={confirmPass}
         onChange={handleConfirmPassChange}
+        className={errorMsg && "red"}
       />
+      <FaEye onClick={ () => {
+          handleClickEye(eyeConfirmPass, setEyeConfirmPass)
+        }} 
+        />
+      </div>
+      {errorMsg &&
+        <p class="red">{errorMsg}</p>
+      }
       <button>Valider</button>
     </form>
   );
