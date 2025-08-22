@@ -5,21 +5,9 @@ const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, co
   const [eyePass, setEyePass] = useState(false)
   const [eyeConfirmPass, setEyeConfirmPass] = useState(false)
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
   // const handleNameChange = (e) => {
   //   setName(e.target.value);
   // };
-
-  const handlePassChange = (e) => {
-    setPass(e.target.value);
-  };
-
-  const handleConfirmPassChange = (e) => {
-    setConfirmPass(e.target.value);
-  };
 
   const handleChange = (event, setState) => {
     setState(event.target.value)
@@ -60,7 +48,9 @@ const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, co
         id="email"
         placeholder="email"
         value={email}
-        onChange={handleEmailChange}
+        onChange={(event) => {
+          handleChange(event, setEmail)
+        }}
       />
       <div className="relative">
         <label htmlFor="password">Password</label>
@@ -70,7 +60,9 @@ const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, co
           id="password"
           placeholder="password"
           value={pass}
-          onChange={handlePassChange}
+          onChange={(event) => {
+            handleChange(event, setPass)
+          }}
           className={errorMsg && "red"}
         />
         <FaEye onClick={ () => {
@@ -86,7 +78,9 @@ const Form = ({setSubmited, setEmail, setName, setPass, setConfirmPass, pass, co
         id="confirm-password"
         placeholder="confirm your password"
         value={confirmPass}
-        onChange={handleConfirmPassChange}
+        onChange={(event) => {
+            handleChange(event, setConfirmPass)
+          }}
         className={errorMsg && "red"}
       />
       <FaEye onClick={ () => {
