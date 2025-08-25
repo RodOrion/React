@@ -1,34 +1,35 @@
-import Button from "./Button"
+import Button from "./Button";
+import { updateCounter, reset } from "../utils/functions";
 
-const Counter = ({setCount, count, reset}) => {
-    console.log(count);
-    
-    const copy = [...count]
-    return <>
-        <div className="wrapper flexContainer">
+const Counter = ({ counts, id, setCounts }) => {
+
+  return (
+    <>
         <div className="flexContainer">
           <Button
             symbol="-"
-            // counter={count}
-            setCount= {setCount}
-            count={copy}
-            classname={copy === 0 ? "disabled" : ""}
-            disabled={copy === 0}
+            id={id}
+            counts={counts}
+            setCounts={setCounts}
+            UpdateCounter={updateCounter}
+            classname={counts[id] === 0 ? "disabled" : ""}
+            disabled={counts[id] === 0}
           />
-          <span>{copy}</span>
+          <span>{counts[id]}</span>
           <Button
             symbol="+"
-            // counter={count}
-            setCount={setCount}
-            count={copy}
-            classname={copy === 10 ? "disabled" : ""}
-            disabled={copy === 10}
+            id={id}
+            counts={counts}
+            setCounts={setCounts}
+            UpdateCounter={updateCounter}
+            classname={counts[id] === 10 ? "disabled" : ""}
+            disabled={counts[id] === 10}
           />
-          <div className="reset" onClick={reset}>
+          <div className="reset" onClick={()=>reset(id, counts, setCounts)}>
             reset
           </div>
         </div>
-      </div>
     </>
-}
-export default Counter
+  );
+};
+export default Counter;

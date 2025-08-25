@@ -1,6 +1,58 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  background-color: #111;
+  font-size: 2rem;
+}
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  color: #fff;
+  min-height: calc(100vh - 135px);
   text-align: center;
+}
+header {
+  color: #fff;
+  gap: 2rem;
+  padding: 1rem 4rem;
+  margin: 0 4rem;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+header svg {
+  fill: blueviolet;
+  stroke: #fff;
+}
+header .addCounter {
+  margin-left: auto;
+  flex: 0 1 auto;
+  cursor: pointer;
+}
+span {
+  padding: 2rem 2.5rem;
+  background-color: blueviolet;
+  margin: 0 2rem;
+  flex: 1;
+  border-radius: 5px;
+}
+button {
+  background-color: #222;
+  border: none;
+  padding: 2rem 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  border-radius: 10px;
+  font-size: 3rem;
+}
+button.disabled {
+  cursor: auto;
+  background-color: #ccc;
+}
+.reset {
+  cursor: pointer;
+  background-color: blueviolet;
+  margin-top: 2rem;
+  padding: 2rem 2.5rem;
+  flex: 1 1 100%;
+  border-radius: 10px;
 }

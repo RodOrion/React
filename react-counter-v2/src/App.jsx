@@ -1,20 +1,22 @@
-import { useState } from 'react'
-import './App.css'
-import Button from "./components/Button";
+import { useState } from "react";
+import "./App.css";
 import { LuCalculator } from "react-icons/lu";
-import Counter from './components/Counter';
+import Counter from "./components/Counter";
 
 function App() {
-  const [count, setCount] = useState([0]);
-  const [counter, setCounter] = useState(1);
-
-
-  const reset = () => {
-    setCount(0);
-  };
+  const [counts, setCounts] = useState([0]);
 
   const addCounter = () => {
-    setCounter(counter + 1)
+    if (counts.length < 3) {
+      const copy = [...counts, 0];
+      setCounts(copy);
+    }
+  };
+  
+  const UpdateCounter = (index, symbol) => {
+    const newCounters = [...counts]
+    symbol === "+" ? newCounters[index]++ : newCounters[index]--;
+    setCounts(newCounters)
   }
 
   return (
@@ -22,27 +24,25 @@ function App() {
       <header className="flexContainer">
         <LuCalculator size="8rem" color="blueviolet" />
         <h1>React counter</h1>
+        <button className="addCounter" onClick={addCounter}>Add counter</button>
       </header>
-
-      <div>
-        <button onClick={addCounter}>Add counter</button>
+      <div className="wrapper flexContainer">
+        {counts.map((value, index) => {
+          return (
+            <Counter
+              id={index}
+              key={index}
+              counts={counts}
+              // value={value}
+              setCounts={setCounts}
+              //UpdateCounter={UpdateCounter}
+              //reset={reset}
+            />
+          );
+        })}
       </div>
-
-      <Counter count={count} setCount={setCount} reset={reset} />
-
-      {
-        counter === 2 &&
-        <Counter count={count} setCount={setCount} reset={reset}  />
-      }
-
-      {
-        counter === 3 &&
-        <Counter count={count} setCount={setCount} reset={reset} />
-      }
-
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;

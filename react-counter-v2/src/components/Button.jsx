@@ -1,14 +1,8 @@
-const Button = ({ symbol, setCount, classname, disabled }) => {
-
-  const handleClick = (symbol) => {
-    //symbol === "+" ? setCounter(counter + 1) : setCounter(counter - 1);
-    symbol === "+" ? setCount((prev) => Number(prev) + 1) : setCount((prev) => Number(prev) - 1);
-  };
-
+const Button = ({ UpdateCounter, symbol, classname, disabled, id, counts, setCounts }) => {
   return (
     <button
       onClick={() => {
-        handleClick(symbol);
+        UpdateCounter(id, symbol, counts, setCounts);
       }}
       className={classname}
       disabled={disabled}
@@ -17,4 +11,5 @@ const Button = ({ symbol, setCount, classname, disabled }) => {
     </button>
   );
 };
+
 export default Button;
