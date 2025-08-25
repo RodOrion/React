@@ -1,14 +1,12 @@
 const Answer = ({
   answer,
   setAnswered,
-  setHasAnswered,
   id,
   isActive,
   setActiveAnswerID,
 }) => {
   const handleClick = (e) => {
     setAnswered(e.target.value);
-    setHasAnswered(true);
     setActiveAnswerID(id);
   };
 

@@ -3,7 +3,6 @@ import Answer from "./Answer";
 import Question from "./Question";
 
 const ItemQuestion = ({ question }) => {
-  const [hasAnswered, setHasAnswered] = useState(false);
   const [answered, setAnswered] = useState("");
   const [activeAnswerID, setActiveAnswerID] = useState(null);
   const [clickQuestion, setClickQuestion] = useState(false);
@@ -24,7 +23,6 @@ const ItemQuestion = ({ question }) => {
                 id={index + answer}
                 answer={answer}
                 setAnswered={setAnswered}
-                setHasAnswered={setHasAnswered}
                 setActiveAnswerID={setActiveAnswerID}
                 isActive={activeAnswerID === index + answer}
               />
@@ -33,7 +31,7 @@ const ItemQuestion = ({ question }) => {
         </div>
       )}
 
-      {hasAnswered &&
+      {activeAnswerID &&
         (answered === question.answers[question.correctAnswer] ? (
           <div className="result good">Bonne réponse</div>
         ) : (
